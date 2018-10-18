@@ -39,7 +39,6 @@ extension XML {
      
      
     */
-    @dynamicMemberLookup
     public enum Accessor: CustomStringConvertible, Swift.Sequence {
         case singleElement(Element)
         case sequence([Element])
