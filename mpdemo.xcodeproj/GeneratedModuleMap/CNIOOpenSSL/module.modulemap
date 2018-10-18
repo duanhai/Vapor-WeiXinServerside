@@ -1,4 +1,4 @@
 module CNIOOpenSSL {
-    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/mpdemo/.build/checkouts/swift-nio-ssl.git-1902675078246837481/Sources/CNIOOpenSSL/include"
+    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/.build/checkouts/swift-nio-ssl.git-6935333603437929647/Sources/CNIOOpenSSL/include"
     export *
 }
