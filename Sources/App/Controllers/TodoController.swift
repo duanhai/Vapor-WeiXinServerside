@@ -152,7 +152,7 @@ final class TodoController {
         let jsonData = jString.data(using: String.Encoding.utf8)!
         
         let decoder = JSONDecoder()
-        let tokenModel = try? decoder.decode(MPToken.self, from: jsonData)
+        let tokenModel = try? decoder.decode(MPToken.self, from: jsonData)
         
         if let token = tokenModel?.access_token,let expireTime = tokenModel?.expires_in {
             print(token)
