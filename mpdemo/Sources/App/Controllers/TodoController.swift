@@ -2,7 +2,7 @@ import Vapor
 import Foundation
 import MongoKitten
 
-import SwiftyXMLParser
+//import SwiftyXMLParser
 
 struct Userpost: Content {
     var username: String

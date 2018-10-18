@@ -1,6 +1,0 @@
-framework module Pods_mpdemoPackageDescription {
-  umbrella header "Pods-mpdemoPackageDescription-umbrella.h"
-
-  export *
-  module * { export * }
-}

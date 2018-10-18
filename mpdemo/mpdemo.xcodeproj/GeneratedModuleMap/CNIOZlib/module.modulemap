@@ -1,0 +1,4 @@
+module CNIOZlib {
+    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/mpdemo/.build/checkouts/swift-nio.git-2500862728445024255/Sources/CNIOZlib/include"
+    export *
+}
