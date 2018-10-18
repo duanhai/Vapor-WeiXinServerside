@@ -1,4 +1,4 @@
 module CNIOLinux {
-    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/.build/checkouts/swift-nio.git-2460522558316224314/Sources/CNIOLinux/include"
+    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/.build/checkouts/swift-nio.git--1493991845485140066/Sources/CNIOLinux/include"
     export *
 }

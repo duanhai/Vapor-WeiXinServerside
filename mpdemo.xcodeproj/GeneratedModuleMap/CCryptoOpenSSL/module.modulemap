@@ -1,4 +1,4 @@
 module CCryptoOpenSSL {
-    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/.build/checkouts/crypto.git--5156538739436328371/Sources/CCryptoOpenSSL/include"
+    umbrella "/Users/duanhai/Desktop/vapor/Vapor-WeiXinServerside/.build/checkouts/crypto.git--5348202716340944544/Sources/CCryptoOpenSSL/include"
     export *
 }
