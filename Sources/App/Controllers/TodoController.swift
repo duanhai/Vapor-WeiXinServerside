@@ -95,7 +95,7 @@ final class TodoController {
 //            print(pp.username)
 //            return pp.description()
             
-            let user = User(username: pp.username, phoneNumber: pp.phoneNumber)
+            _ = User(username: pp.username, phoneNumber: pp.phoneNumber)
 //            let user = try User(id: "5bc58007e43ae38d531bc50c")
             
             let code = try User.lookup(name: pp.username)
@@ -112,7 +112,7 @@ final class TodoController {
                     fatalError()
                 }
                 
-                guard let phone = doc.dictionaryRepresentation["phoneNumber"] as? String else{
+                guard (doc.dictionaryRepresentation["phoneNumber"] as? String) != nil else{
                     fatalError()
                 }
                 
@@ -149,10 +149,10 @@ final class TodoController {
         let httpRes = try httpClient.send(httpReq).wait()
         print(httpRes)
         let jString = httpRes.body.description;
-        let jsonData = jString.data(using: String.Encoding.utf8)!
+        let jsonData = jString.data(using: String.Encoding.utf8)!
         
         let decoder = JSONDecoder()
-        let tokenModel = try? decoder.decode(MPToken.self, from: jsonData)
+        let tokenModel = try? decoder.decode(MPToken.self, from: jsonData)
         
         if let token = tokenModel?.access_token,let expireTime = tokenModel?.expires_in {
             print(token)
@@ -172,13 +172,13 @@ final class TodoController {
         var spStr:[String] = req.description.components(separatedBy: "close")
         if spStr.count > 1 {
             
-            var xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
+            let xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
             let xml = try! XML.parse(xmlStr)
             let ToUserName = xml["xml"]["ToUserName"].text!
             let FromUserName = xml["xml"]["FromUserName"].text!
-            let CreateTime = xml["xml"]["CreateTime"].text!
+            _ = xml["xml"]["CreateTime"].text!
             let MsgType = xml["xml"]["MsgType"].text!
-            let MsgId = xml["xml"]["MsgId"].text!
+            _ = xml["xml"]["MsgId"].text!
             let Content = xml["xml"]["Content"].text!
             var responseString: String = " "
 
