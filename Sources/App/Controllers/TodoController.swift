@@ -172,6 +172,7 @@ final class TodoController {
         var spStr:[String] = req.description.components(separatedBy: "close")
         if spStr.count > 1 {
             
+            print("进来了")
             let xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
             let xml = try! XML.parse(xmlStr)
             let ToUserName = xml["xml"]["ToUserName"].text!
