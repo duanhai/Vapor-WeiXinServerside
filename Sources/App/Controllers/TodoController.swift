@@ -7,8 +7,6 @@ import MongoKitten
 struct Userpost: Content {
     var username: String
     var email: String
-    var locaiton: String
-    var phoneNumber: String
 //    var id: String? = nil
     func description() -> String {
         return "username \(self.username)"
@@ -88,6 +86,7 @@ final class TodoController {
         var post: Userpost? = nil
         try req.content.decode(Userpost.self).map{onePost in
 //            print(onePost) 不能在这个里面做太复杂的推断
+            print(onePost)
             post = onePost
         }
         
@@ -95,7 +94,7 @@ final class TodoController {
 //            print(pp.username)
 //            return pp.description()
             
-            _ = User(username: pp.username, phoneNumber: pp.phoneNumber)
+            _ = User(username: pp.username, phoneNumber: pp.email)
 //            let user = try User(id: "5bc58007e43ae38d531bc50c")
             
             let code = try User.lookup(name: pp.username)
