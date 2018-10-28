@@ -169,6 +169,7 @@ final class TodoController {
     func handMsg(_ req: Request) throws -> String {
         print(req)
         var spStr:[String] = req.description.components(separatedBy: "close")
+    
         if spStr.count > 1 {
             
             print("进来了")

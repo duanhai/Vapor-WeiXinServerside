@@ -8,6 +8,6 @@
 import Foundation
 import MongoKitten
 
-let db = try! MongoKitten.Database("mongodb://35.185.190.141:27000/myapp")
+let db = try! MongoKitten.Database("mongodb://127.0.0.1:27017/myapp")
 let myCollection = db["users"]
 

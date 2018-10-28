@@ -11,14 +11,14 @@ import MongoKitten
 struct User {
     static let collection = db["user"]
     var id: ObjectId
-    var username: String
+    var name: String
     var email: String
     var location: String
     var phoneNumber: String
     
     var document: Document {
         return ["_id": self.id,
-                "username":self.username,
+                "name":self.name,
                 "email":self.email,
                 "location":self.location,
                 "phoneNumber":self.phoneNumber]
@@ -27,7 +27,7 @@ struct User {
     
     var documentForSave: Document {
         
-        return ["username":self.username,
+        return ["username":self.name,
                 "email":self.email,
                 "location":self.location,
                 "phoneNumber":self.phoneNumber]
@@ -35,7 +35,7 @@ struct User {
     
     init(username: String, email: String? = "", location: String? = "", phoneNumber: String){
         self.id = ObjectId()
-        self.username = username
+        self.name = username
         self.email = email ?? ""
         self.location = location ?? ""
         self.phoneNumber = phoneNumber
@@ -53,7 +53,7 @@ struct User {
         }
         
         self.id = objectId
-        self.username = username
+        self.name = username
         self.location = location
         self.email = email
         self.phoneNumber = phoneNumber
@@ -86,6 +86,8 @@ struct User {
         var documentArray: [Document]? = []
 
         if let na = name {
+            print("+++++====")
+
             let result = try User.collection.find(query)
             try result.compactMap({doc in
                 //            print(doc.dictionaryRepresentation["username"] as! String)
@@ -94,6 +96,7 @@ struct User {
             })
         }else {
             let result = try User.collection.find()
+            print("=======\(result)")
             try result.compactMap({doc in
                 //            print(doc.dictionaryRepresentation["username"] as! String)
                 //            return doc
