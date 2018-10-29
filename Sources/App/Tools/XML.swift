@@ -104,6 +104,7 @@ open class XML {
      */
     open class func parse(_ str: String) throws -> Accessor {
         guard let data = str.data(using: String.Encoding.utf8) else {
+            print("解析错误")
             throw XMLError.parseError
         }
         
