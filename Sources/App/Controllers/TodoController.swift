@@ -163,7 +163,11 @@ final class TodoController {
     func handMsg(_ req: Request) throws -> String {
         print(req)
         var spStr:[String] = req.description.components(separatedBy: "text/xml")
-    
+        print(spStr[1])
+        print("sss")
+        print(spStr[0])
+        print("ttt")
+
         if spStr.count > 1 {
             
             print("进来了")
