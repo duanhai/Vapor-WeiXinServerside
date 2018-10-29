@@ -161,7 +161,7 @@ final class TodoController {
     // Create an HTTP request: GET /
     
     func handMsg(_ req: Request) throws -> String {
-        print(req)
+        print(try req.content.decode(String.self))
         var spStr:[String] = req.description.components(separatedBy: "text/xml")
         print(spStr[1])
         print("sss")
