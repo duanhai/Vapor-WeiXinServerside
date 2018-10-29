@@ -103,17 +103,11 @@ final class TodoController {
             
             for doc in code {
                 
-                guard let username = doc.dictionaryRepresentation["username"] as? String else{
-                    fatalError()
-                }
+                let username = doc.dictionaryRepresentation["username"] as? String ?? ""
                 
-                guard let name = doc.dictionaryRepresentation["name"] as? String else{
-                    fatalError()
-                }
+                let name = doc.dictionaryRepresentation["name"] as? String ?? ""
                 
-                guard (doc.dictionaryRepresentation["phoneNumber"] as? String) != nil else{
-                    fatalError()
-                }
+                let phoneNumber = doc.dictionaryRepresentation["phoneNumber"] as? String ?? ""
                 
                 responseString += username
                 responseString += name
@@ -188,12 +182,14 @@ final class TodoController {
                 
                 for doc in code {
                     
-                    var userName: String = ""
+//                    var userName: String = ""
                     var phoneNumber: String = ""
                     var location: String = ""
-                    if let username = doc.dictionaryRepresentation["name"] as? String {
-                        userName = username
-                    }
+//                    if let username = doc.dictionaryRepresentation["name"] as? String {
+//                        userName = username
+//                    }
+                    let username = doc.dictionaryRepresentation["username"] as? String ?? ""
+                    let name = doc.dictionaryRepresentation["name"] as? String ?? ""
                     
                     if let phone = doc.dictionaryRepresentation["phoneNumber"] as? String {
                         phoneNumber = phone
@@ -203,7 +199,7 @@ final class TodoController {
                         location = location1
                     }
                     
-                    responseString += "姓名 \(userName)"
+                    responseString += "姓名 \(username)"
                     responseString += "   "
                     responseString += "手机 \(phoneNumber)"
                     responseString += "   "
