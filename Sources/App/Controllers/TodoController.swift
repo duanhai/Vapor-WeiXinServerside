@@ -164,16 +164,9 @@ final class TodoController {
         print(try req.content.decode(String.self))
         var spStr:[String] = req.description.components(separatedBy: "text/xml")
         print(spStr[1])
-        print("sss")
-        print(spStr[0])
-        print("ttt")
-
         if spStr.count > 1 {
-            
-            print("进来了")
             let xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
             let xml = try! XML.parse(xmlStr)
-            print("==== \(xml["xml"].text) 000")
             let ToUserName = xml["xml"]["ToUserName"].text!
             let FromUserName = xml["xml"]["FromUserName"].text!
             _ = xml["xml"]["CreateTime"].text!

@@ -31,4 +31,9 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(migrations)
     let myService = NIOServerConfig.default(hostname: "0.0.0.0", port: 80)
     services.register(myService)
+    
+    var contentConfig = ContentConfig.default()
+    let xmlEncoder = PlaintextEncoder()
+    contentConfig.use(encoder: xmlEncoder, for: .xml)
+    services.register(contentConfig)
 }
