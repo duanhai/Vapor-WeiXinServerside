@@ -173,7 +173,7 @@ final class TodoController {
             print("进来了")
             let xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
             let xml = try! XML.parse(xmlStr)
-            print("==== \(xml["xml"]) 000")
+            print("==== \(xml["xml"].text) 000")
             let ToUserName = xml["xml"]["ToUserName"].text!
             let FromUserName = xml["xml"]["FromUserName"].text!
             _ = xml["xml"]["CreateTime"].text!
