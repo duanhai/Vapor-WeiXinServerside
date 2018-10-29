@@ -162,13 +162,14 @@ final class TodoController {
     
     func handMsg(_ req: Request) throws -> String {
         print(req)
-        var spStr:[String] = req.description.components(separatedBy: "close")
+        var spStr:[String] = req.description.components(separatedBy: "text/xml")
     
         if spStr.count > 1 {
             
             print("进来了")
             let xmlStr = spStr[1].replacingOccurrences(of: "\n", with: "")
             let xml = try! XML.parse(xmlStr)
+            print(xmlStr)
             let ToUserName = xml["xml"]["ToUserName"].text!
             let FromUserName = xml["xml"]["FromUserName"].text!
             _ = xml["xml"]["CreateTime"].text!

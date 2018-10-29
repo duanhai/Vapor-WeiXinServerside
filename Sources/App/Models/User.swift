@@ -27,7 +27,7 @@ struct User {
     
     var documentForSave: Document {
         
-        return ["username":self.name,
+        return ["name":self.name,
                 "email":self.email,
                 "location":self.location,
                 "phoneNumber":self.phoneNumber]
